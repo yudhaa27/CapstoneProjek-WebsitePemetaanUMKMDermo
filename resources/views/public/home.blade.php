@@ -1,120 +1,135 @@
 @extends('layouts.app')
 
-@section('title', 'Warisan Luhur, Sentuhan Masa Depan - UMKM Kelurahan Dermo')
+@section('title', 'Warisan Luhur, Sentuhan Masa Depan - Batik Desa Dermo')
 
 @section('content')
 <!-- ========================================================================= -->
-<!-- TAHAP 1: HERO SECTION & STATISTIK UNGGULAN (Sesuai Referensi Desain)      -->
+<!-- HERO SECTION (PERSIS SESUAI GAMBAR REFERENSI USER)                        -->
 <!-- ========================================================================= -->
-<section class="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white">
-    <!-- Subtle Ambient Radial Glows -->
-    <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
-    <div class="absolute top-1/3 left-10 w-72 h-72 bg-sky-200/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<section class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-[#FAFCFF]">
+    
+    <!-- Geometric Intersecting Rings & Diagonal Dashed Line Background SVG -->
+    <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden flex items-center justify-center">
+        <svg class="w-full h-full max-w-7xl" viewBox="0 0 1200 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Diagonal Dashed Line -->
+            <line x1="280" y1="40" x2="850" y2="480" stroke="#DBEAFE" stroke-width="1.5" stroke-dasharray="6 6" />
+            
+            <!-- Orbital Large Intersecting Rings centered behind Hero Photo -->
+            <ellipse cx="880" cy="270" rx="310" ry="190" stroke="#E2EDF9" stroke-width="1.5" transform="rotate(-15 880 270)" />
+            <ellipse cx="860" cy="280" rx="260" ry="260" stroke="#E6F0FA" stroke-width="1.5" />
+            <ellipse cx="850" cy="290" rx="200" ry="140" stroke="#DBEAFE" stroke-width="1" stroke-dasharray="4 4" transform="rotate(35 850 290)" />
+            
+            <!-- Ambient Soft Blue Glow -->
+            <circle cx="870" cy="270" r="160" fill="#EBF3FD" filter="blur(70px)" opacity="0.6" />
+            <circle cx="200" cy="180" r="140" fill="#EFF6FF" filter="blur(60px)" opacity="0.5" />
+        </svg>
+    </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             
-            <!-- LEFT COLUMN: Headline & CTA -->
-            <div class="lg:col-span-7 space-y-7 text-left">
-                <!-- Badge Pill -->
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-bold tracking-wide uppercase shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                    Potensi & Pemetaan Geografis UMKM
+            <!-- LEFT COLUMN: Headline, Deskripsi, Tombol Aksi -->
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <!-- Capsule Badge Pill -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200/90 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] text-slate-700 text-[11px] font-bold tracking-wider uppercase backdrop-blur-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
+                    <span>PORTAL RESMI UMKM DESA DERMO</span>
                 </div>
 
-                <!-- Main Display Heading -->
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
-                    Warisan Luhur, <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500">
-                        Sentuhan Masa Depan:
-                    </span> <br>
-                    Potensi UMKM Dermo
+                <!-- Main Display Heading (Playfair Serif Font) -->
+                <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-[3.65rem] font-bold text-slate-900 tracking-tight leading-[1.14]">
+                    Warisan Luhur, <span class="text-[#0ea5e9] font-serif-title font-medium">Sentuhan</span><br>
+                    <span class="text-[#1E56A0] font-serif-title font-bold">Masa Depan</span>: Batik Desa<br>
+                    Dermo
                 </h1>
 
-                <!-- Subtitle / Deskripsi -->
-                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-                    Pusat dokumentasi terstruktur, pemetaan geografis digital, dan katalog karya warga Kelurahan Dermo, Kecamatan Mojoroto, Kota Kediri. Menghubungkan tradisi lokal dengan kemudahan teknologi masa kini.
+                <!-- Subtitle Description (Italic, Authentic) -->
+                <p class="italic text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal pt-1">
+                    Menghubungkan 50+ pengrajin batik tulis dan cap tradisional ke pasar global melalui inovasi digital berkelanjutan, presisi kriya tangan, dan nilai filosofis leluhur.
                 </p>
 
-                <!-- Dual Action Buttons -->
-                <div class="flex flex-wrap items-center gap-4 pt-2">
+                <!-- Action Button Group -->
+                <div class="flex flex-wrap items-center gap-4 pt-3">
+                    <!-- Button 1: Solid Navy Pill -->
                     <a href="{{ route('public.map') }}" 
-                        class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm shadow-xl shadow-blue-600/25 hover:shadow-blue-600/35 transition-all duration-200 hover:-translate-y-0.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#1E56A0] hover:bg-[#163e75] active:bg-[#12305c] text-white font-semibold text-sm shadow-lg shadow-blue-900/15 transition-all duration-200 hover:-translate-y-0.5">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
-                        Buka Peta Interaktif
+                        <span>Lihat Peta UMKM</span>
                     </a>
 
+                    <!-- Button 2: White Pill with Catalog Grid Icon -->
                     <a href="{{ route('public.list') }}" 
-                        class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-sm shadow-sm hover:shadow transition-all duration-200 hover:-translate-y-0.5">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200/90 text-slate-800 font-semibold text-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+                        <svg class="w-4 h-4 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 4h7v7H4V4zm10 0h7v7h-7V4zM4 14h7v7H4v-7zm10 0h7v7h-7v-7z"/>
                         </svg>
-                        Jelajahi Katalog UMKM
+                        <span>Katalog Batik Unggulan</span>
                     </a>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Visual Composition with Geometric Rings & Floating Badges -->
-            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <!-- Geometric Orbital Lines (SVG Background) -->
-                <svg class="absolute -top-10 -right-10 w-[125%] h-[125%] max-w-[540px] text-blue-200/50 pointer-events-none -z-10 animate-spin-slow" viewBox="0 0 400 400" fill="none">
-                    <circle cx="200" cy="200" r="140" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" />
-                    <circle cx="200" cy="200" r="185" stroke="currentColor" stroke-width="1" />
-                    <circle cx="200" cy="200" r="95" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
-                    <ellipse cx="200" cy="200" rx="190" ry="120" stroke="currentColor" stroke-width="1.2" transform="rotate(-25 200 200)" opacity="0.5"/>
-                </svg>
+            <!-- RIGHT COLUMN: Visual Composition with Hero Frame & Badges -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end mt-6 lg:mt-0">
+                <div class="relative w-full max-w-md sm:max-w-[460px]">
+                    
+                    <!-- Floating Badge TOP LEFT: Gerai -->
+                    <div class="absolute -top-6 -left-4 sm:-left-8 z-20 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#1E56A0] flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-extrabold text-slate-900 block leading-tight">58+ Gerai</span>
+                            <span class="text-[11px] text-slate-500 font-medium block leading-tight mt-0.5">100% Pewarna Alami</span>
+                        </div>
+                    </div>
 
-                <div class="relative w-full max-w-md sm:max-w-lg">
-                    <!-- Main Frame Image -->
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
-                        <img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?auto=format&fit=crop&w=900&q=80" 
-                            alt="Pengrajin & Pelaku Usaha Dermo" 
-                            class="w-full h-[420px] sm:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <!-- Main Frame Photo -->
+                    <div class="relative rounded-[2.25rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+                        <img src="{{ asset('images/hero-artisan.jpg') }}" 
+                            alt="Ibu Warsiti Pengrajin Batik Canting Tulis Klasik Desa Dermo" 
+                            class="w-full h-[400px] sm:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
                         
-                        <!-- Gradient Overlay Bottom -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/10"></div>
+                        <!-- Badge Top Right Inside Photo: Ekspor -->
+                        <div class="absolute top-4 right-4 z-10 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-1.5 shadow-md">
+                            <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                            <span>Ekspor ke 14 Negara</span>
+                        </div>
+
+                        <!-- Frosted Banner Bottom on Photo: Profil Artisan -->
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent p-5 pt-14 text-white">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-sky-400 block">
+                                MASTER ARTISAN GIRILOYO
+                            </span>
+                            <span class="text-sm sm:text-base font-bold text-white block mt-0.5">
+                                Ibu Warsiti • Canting Tulis Klasik
+                            </span>
+                        </div>
                     </div>
 
-                    <!-- Floating Badge TOP RIGHT: Status Sentra Aktif -->
-                    <div class="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce-slight">
-                        <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
+                    <!-- Floating Badge BOTTOM RIGHT: Rating & Ulasan -->
+                    <div class="absolute -bottom-6 -right-3 sm:-right-6 z-20 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#1E56A0] text-white flex items-center justify-center font-bold flex-shrink-0 shadow-md shadow-blue-600/20">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
                         </div>
                         <div>
-                            <span class="text-xs font-bold text-slate-900 block leading-tight">Sentra Aktif Dermo</span>
-                            <span class="text-[11px] text-slate-500 font-medium block leading-none mt-0.5">Kecamatan Mojoroto</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-base font-extrabold text-slate-900 leading-none">4.98</span>
+                                <span class="text-xs text-slate-400 font-medium leading-none">/ 5.0</span>
+                            </div>
+                            <span class="text-[10px] text-slate-500 font-medium block mt-1 leading-none">1.2k+ Ulasan Terverifikasi</span>
                         </div>
                     </div>
 
-                    <!-- Floating Badge LEFT MIDDLE: Rating / Rekomendasi -->
-                    <div class="absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center text-sm font-bold">
-                            ★
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-900 block">4.9 / 5.0</span>
-                            <span class="text-[10px] text-slate-500 font-medium block">Kepuasan Pengunjung</span>
-                        </div>
-                    </div>
-
-                    <!-- Floating Card BOTTOM: Lokasi & Kategori -->
-                    <div class="absolute -bottom-5 left-4 right-4 sm:left-6 sm:right-6 bg-slate-900/90 backdrop-blur-md text-white p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-3 overflow-hidden">
-                            <div class="w-9 h-9 rounded-xl bg-blue-600/30 border border-blue-500/40 text-blue-400 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-                            </div>
-                            <div class="overflow-hidden">
-                                <p class="text-xs font-bold text-white truncate">Sentra Kuliner, Kerajinan & Jasa</p>
-                                <p class="text-[11px] text-slate-300 truncate">Kelurahan Dermo, Kota Kediri</p>
-                            </div>
-                        </div>
-                        <span class="px-2.5 py-1 rounded-full bg-blue-500 text-white text-[10px] font-bold tracking-wider uppercase flex-shrink-0">
-                            Aktif
-                        </span>
-                    </div>
                 </div>
             </div>
 
@@ -123,99 +138,103 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 4 STATISTIK HIGHLIGHT CARDS (Persis Seperti Gambar Referensi)              -->
+<!-- 4 STATISTIK CARDS (PERSIS SESUAI GAMBAR REFERENSI USER)                    -->
 <!-- ========================================================================= -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 mb-20 relative z-20">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 mb-20 relative z-20">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
-        <!-- Card 1: Total UMKM -->
-        <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition duration-200 flex flex-col justify-between group">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition flex items-center justify-center">
+        <!-- CARD 1: UMKM Terverifikasi -->
+        <div class="bg-white p-7 rounded-[1.75rem] border border-slate-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-blue-50/90 text-[#1E56A0] flex items-center justify-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                     </svg>
                 </div>
-                <span class="text-[11px] font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full">
-                    Terdata
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs font-semibold">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    +14% thn ini
                 </span>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    {{ max($totalUmkm, 50) }}+
+                <p class="font-serif-title text-4xl sm:text-[2.75rem] font-extrabold text-slate-900 tracking-tight leading-none">
+                    00+
                 </p>
-                <h3 class="text-sm font-bold text-slate-800 mt-1">UMKM Terdata</h3>
+                <h3 class="text-sm font-bold text-slate-900 mt-3">UMKM Terverifikasi</h3>
                 <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Unit usaha aktif warga terdaftar dan terverifikasi di basis data kelurahan.
+                    Terintegrasi standar kualitas indikasi geografis.
                 </p>
             </div>
         </div>
 
-        <!-- Card 2: Kategori Usaha -->
-        <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition duration-200 flex flex-col justify-between group">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition flex items-center justify-center">
+        <!-- CARD 2: Pengrajin Aktif -->
+        <div class="bg-white p-7 rounded-[1.75rem] border border-slate-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-blue-50/90 text-[#1E56A0] flex items-center justify-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                     </svg>
                 </div>
-                <span class="text-[11px] font-bold text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full">
-                    Sektor
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs font-semibold">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    70% Wanita
                 </span>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    {{ max($totalCategories, 5) }}+
+                <p class="font-serif-title text-4xl sm:text-[2.75rem] font-extrabold text-slate-900 tracking-tight leading-none">
+                    00+
                 </p>
-                <h3 class="text-sm font-bold text-slate-800 mt-1">Kategori Usaha</h3>
+                <h3 class="text-sm font-bold text-slate-900 mt-3">Pengrajin Aktif</h3>
                 <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Mencakup olahan kuliner, kerajinan, jasa, retail, dan produksi lokal.
+                    Keahlian turun-temurun dari tiga generasi sentra.
                 </p>
             </div>
         </div>
 
-        <!-- Card 3: Terpetakan Spasial -->
-        <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition duration-200 flex flex-col justify-between group">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition flex items-center justify-center">
+        <!-- CARD 3: Karya Terdokumentasi -->
+        <div class="bg-white p-7 rounded-[1.75rem] border border-slate-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-blue-50/90 text-[#1E56A0] flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                </div>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs font-semibold">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    Terarsip NFT/QR
+                </span>
+            </div>
+            <div>
+                <p class="font-serif-title text-4xl sm:text-[2.75rem] font-extrabold text-slate-900 tracking-tight leading-none">
+                    00+
+                </p>
+                <h3 class="text-sm font-bold text-slate-900 mt-3">Karya Terdokumentasi</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                    Katalog digital dengan narasi filosofis orisinal.
+                </p>
+            </div>
+        </div>
+
+        <!-- CARD 4: Sentra Budaya Utama -->
+        <div class="bg-white p-7 rounded-[1.75rem] border border-slate-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-blue-50/90 text-[#1E56A0] flex items-center justify-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
                     </svg>
                 </div>
-                <span class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">
-                    GIS Akurat
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs font-semibold">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                    100% Terpetakan
                 </span>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    100%
+                <p class="font-serif-title text-4xl sm:text-[2.75rem] font-extrabold text-slate-900 tracking-tight leading-none">
+                    o Dusun
                 </p>
-                <h3 class="text-sm font-bold text-slate-800 mt-1">Terpetakan Spasial</h3>
+                <h3 class="text-sm font-bold text-slate-900 mt-3">Sentra Budaya Utama</h3>
                 <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Titik koordinat presisi langsung terkoneksi peta interaktif Leaflet.
-                </p>
-            </div>
-        </div>
-
-        <!-- Card 4: Wilayah Kelurahan -->
-        <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition duration-200 flex flex-col justify-between group">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                </div>
-                <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                    Wilayah
-                </span>
-            </div>
-            <div>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    6 RW
-                </p>
-                <h3 class="text-sm font-bold text-slate-800 mt-1">Kelurahan Dermo</h3>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Cakupan seluruh lingkungan RT/RW di wilayah Kec. Mojoroto, Kota Kediri.
+                    Nama Beberapa Dusun
                 </p>
             </div>
         </div>
@@ -224,20 +243,18 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- TAHAP BERIKUTNYA YANG AKAN DILENGKAPI: KATALOG, PETA GIS, PROSES, PROFIL  -->
+<!-- CUPLIKAN PETA INTERAKTIF SEBELUM TAHAP KATALOG                            -->
 <!-- ========================================================================= -->
-
-<!-- Quick Teaser Peta Interaktif -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm space-y-6">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="bg-white p-6 sm:p-8 rounded-[2rem] border border-slate-100 shadow-sm space-y-5">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Pemetaan Digital</span>
-                <h2 class="text-2xl font-bold text-slate-900 mt-1">Peta Interaktif Sebaran UMKM</h2>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">Eksplorasi posisi geografis unit usaha di Kelurahan Dermo secara langsung.</p>
+                <span class="text-xs font-bold text-[#1E56A0] uppercase tracking-wider">Pemetaan Digital GIS</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-1">Peta Persebaran Lokasi UMKM Dermo</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Titik koordinat unit usaha dan sentra pengrajin di wilayah Kelurahan Dermo.</p>
             </div>
-            <a href="{{ route('public.map') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
-                Buka Peta Penuh &rarr;
+            <a href="{{ route('public.map') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1E56A0] hover:underline">
+                Buka Peta Layar Penuh &rarr;
             </a>
         </div>
 
